@@ -1,45 +1,42 @@
 ﻿@model IEnumerable<DIY_Propter.Models.Prompting>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "All Promptings";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PromptID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Text)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PromptID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Text)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    <h2>@ViewBag.Title</h2>
+    <p>
+        <a class="btn btn-primary" href="@Url.Action("Create")" role="button">Create new</a>
+    </p>
+    <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PromptID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th></th>
+            </tr>
+        <tbody class="table-striped">
 
-</table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PromptID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=@item.PromptID }) |
+                        @Html.ActionLink("Details", "Details", new { id = @item.PromptID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = @item.PromptID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

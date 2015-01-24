@@ -1,4 +1,30 @@
-﻿@{
+﻿@model IEnumerable<DIY_Propter.Models.Prompting>
+
+@{
     ViewBag.Title = "Overview";
 }
-<h2></h2>
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+    </tr>
+    <tbody class="table-striped">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.ActionLink("Start Promting", "Start","Prompter", new { id = @item.PromptID },null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

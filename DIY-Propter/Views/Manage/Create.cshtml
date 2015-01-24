@@ -1,10 +1,10 @@
 ﻿@model DIY_Propter.Models.Prompting
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create new Promting";
 }
 
-<h2>Create</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -12,14 +12,6 @@
 
     <fieldset>
         <legend>Prompting</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.PromptID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.PromptID)
-            @Html.ValidationMessageFor(model => model.PromptID)
-        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Title)
@@ -36,9 +28,12 @@
             @Html.EditorFor(model => model.Text)
             @Html.ValidationMessageFor(model => model.Text)
         </div>
-
-        <p>
-            <input type="submit" value="Create" />
+        
+        <div class="alert alert-info" role="alert">
+            Start each paragraph with an asterisk (*) to identify it as seperate item.
+        </div>
+        <p style="margin-top:20px;">
+            <input class ="btn btn-primary" type="submit" value="Create" />
         </p>
     </fieldset>
 }

@@ -1,0 +1,25 @@
+﻿body {
+  background-color: #000;
+  color: #3D3D3D;
+  font-family: 'Consolas','Courier New',Courier,monospace;
+  font-size: 30px;
+}
+
+.pitems {
+    text-align:center;
+    
+    div {
+        padding:10px; 
+    }
+
+    .neighbor {
+        font-size:40px;
+        color:#808080;
+
+    }
+
+    .active {
+        color:white;
+        font-size:60px;
+    }
+}

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DIY_Propter.Infrastructure;
+using DIY_Propter.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +15,8 @@ namespace DIY_Propter.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            List<Prompting> prompts = DataStore.GetCollection<Prompting>("promptings").FindAll().ToList();
+            return View(prompts);
         }
 
         public ActionResult Search(string searchterm)
