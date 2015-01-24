@@ -12,7 +12,8 @@
     font-size: 40px;
     color: #808080; }
   .pitems .active {
+    white-space: pre-wrap;
     color: white;
-    font-size: 60px; }
+    font-size: 70px; }
 
 /*# sourceMappingURL=prompter.css.map */
