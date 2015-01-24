@@ -13,6 +13,10 @@ namespace DIY_Propter.Controllers
 
         public ActionResult Index()
         {
+
+            //check if database is there
+
+
             return View();
         }
 
