@@ -16,5 +16,10 @@ namespace DIY_Propter.Controllers
             return View();
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
     }
 }
