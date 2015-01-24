@@ -1,5 +1,6 @@
 ﻿using DIY_Propter.Infrastructure;
 using DIY_Propter.Models;
+using MongoDB.Driver.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +23,10 @@ namespace DIY_Propter.Controllers
         //
         // GET: /Manage/Details/5
 
-        public ActionResult Details(int id)
+        public ActionResult Details(Guid id)
         {
-            return View();
+            Prompting p = DataStore.GetCollection<Prompting>("promptings").FindOne(Query<Prompting>.EQ(x => x.PromptID, id));
+            return View(p);
         }
 
         //
@@ -58,21 +60,24 @@ namespace DIY_Propter.Controllers
         //
         // GET: /Manage/Edit/5
 
-        public ActionResult Edit(int id)
+        public ActionResult Edit(Guid id)
         {
-            return View();
+            Prompting p = DataStore.GetCollection<Prompting>("promptings").FindOne(Query<Prompting>.EQ(x => x.PromptID, id));
+
+            return View(p);
         }
 
         //
         // POST: /Manage/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Guid id, Prompting p)
         {
             try
             {
                 // TODO: Add update logic here
-
+                var prompts = DataStore.GetCollection<Prompting>("promptings");
+                prompts.Save(p);
                 return RedirectToAction("Index");
             }
             catch
@@ -84,21 +89,22 @@ namespace DIY_Propter.Controllers
         //
         // GET: /Manage/Delete/5
 
-        public ActionResult Delete(int id)
+        public ActionResult Delete(Guid id)
         {
-            return View();
+            var p = DataStore.GetCollection<Prompting>("promptings").FindOne(Query<Prompting>.EQ(x => x.PromptID,id));
+            return View(p);
         }
 
         //
         // POST: /Manage/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Guid id, Prompting p)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                DataStore.GetCollection<Prompting>("promptings").Remove(Query<Prompting>.EQ(x => x.PromptID, id));
                 return RedirectToAction("Index");
             }
             catch

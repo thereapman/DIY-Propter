@@ -1,1 +1,1 @@
-﻿body{background-color:#000;color:#3d3d3d;font-family:'Consolas','Courier New',Courier,monospace;font-size:30px}.pitems{text-align:center}.pitems div{padding:10px}.pitems .neighbor{font-size:40px;color:gray}.pitems .active{white-space:pre-wrap;color:#fff;font-size:70px}
+﻿body{background-color:#000;color:#3d3d3d;font-family:'Courier New',Courier,monospace;font-size:30px;overflow:hidden}.pitems{text-align:center}.pitems div{padding:10px}.pitems .neighbor{font-size:40px;color:gray}.pitems .active{white-space:pre-wrap;color:#fff;font-size:70px}

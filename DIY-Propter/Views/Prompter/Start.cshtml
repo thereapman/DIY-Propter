@@ -33,7 +33,9 @@
             var wh = $(window).height() / 2;
             var shift = wh - top;
             $(".pitems").css("margin-top", shift);
-
+            setTimeout(function () {
+                $(document).scrollTop(0);
+            }, 50);
         }
 
         $(document).ready(function () {

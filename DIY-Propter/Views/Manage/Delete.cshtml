@@ -1,0 +1,40 @@
+﻿@model DIY_Propter.Models.Prompting
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Prompting</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PromptID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PromptID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Text)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Text)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" class="btn btn-danger" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
