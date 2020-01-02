@@ -3,7 +3,14 @@
     "title": "23d"
   },
   "detail": {
-    "contributors": [],
+    "contributors": [
+      {
+        "name": "pari"
+      },
+      {
+        "name": "enrico"
+      }
+    ],
     "diagrams": []
   }
 }
