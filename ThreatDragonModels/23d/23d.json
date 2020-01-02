@@ -11,6 +11,12 @@
         "name": "enrico"
       }
     ],
-    "diagrams": []
+    "diagrams": [
+      {
+        "title": "backend",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0
+      }
+    ]
   }
 }
